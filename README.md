@@ -1,6 +1,6 @@
 # Ocelot Pride Calculator
 
-Have you ever been in a situation where you need to calculate the number of tokens you will create with Ocelot Pride but it's taking you too long to do the math? Maybe you find yourself in the unfortunate situation of having created multiple token copies of Ocelot Pride. Maybe you're wondering whether to play your Roaming Throne or your Mondrak to generate the most cats to throw at your opponents with Goblin Bombardment. Or maybe you need to know how much life you're about to gain from your Soul Warden. Regardless, this tool is for you.
+Have you ever been in a situation where you need to calculate the number of tokens you will create with Ocelot Pride but it's taking too long to do the math? Maybe you find yourself in the unfortunate situation of having created multiple token copies of Ocelot Pride. Maybe you're wondering whether to play Roaming Throne or Mondrak to generate the most cats to throw at your opponents with Goblin Bombardment. Or maybe you need to know how much life you're about to gain from your Soul Warden. Regardless, this tool is for you.
 
 [Live Demo](https://ocelot-pride-calc.vercel.app/)
 
