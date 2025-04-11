@@ -16,6 +16,56 @@ interface Results {
   totalTokens: number;
 }
 
+function resolveTrigger(
+  remainingTriggers: number,
+  permanentsCount: number,
+  tokenDoublers: number,
+  tokens: TokenType[]
+) {
+  const tokensCopy = structuredClone(tokens);
+  let updatedPermanentsCount = permanentsCount;
+  if (remainingTriggers === 0)
+    if (updatedPermanentsCount < 10) {
+      return {
+        tokenResults: [tokensCopy[0]],
+        totalTokens: tokensCopy[0].count,
+      };
+    } else {
+      return {
+        tokenResults: tokensCopy,
+        totalTokens: tokens.reduce((acc, token) => acc + token.count, 0),
+      } as Results;
+    }
+  const catsToCreate = 1 * Math.pow(2, tokenDoublers);
+  if (
+    tokensCopy.length === 0 ||
+    tokensCopy[0].name !== "1/1 white Cat creature"
+  ) {
+    tokensCopy.unshift({
+      id: "1/1 white Cat creature",
+      name: "1/1 white Cat creature",
+      count: catsToCreate,
+    });
+    updatedPermanentsCount += catsToCreate;
+  } else {
+    tokensCopy[0].count += catsToCreate;
+    updatedPermanentsCount += catsToCreate;
+  }
+
+  if (updatedPermanentsCount >= 10) {
+    tokensCopy.forEach((token) => {
+      token.count = token.count + token.count * Math.pow(2, tokenDoublers);
+    });
+  }
+
+  return resolveTrigger(
+    remainingTriggers - 1,
+    updatedPermanentsCount,
+    tokenDoublers,
+    tokensCopy
+  );
+}
+
 interface FormState {
   ocelotPrideCount: number;
   tokensCreatedThisTurn: number;
@@ -34,57 +84,6 @@ const App = () => {
     tokenDoublers: 0,
     tokens: [],
   });
-
-  // Calculate total tokens created
-  function resolveTrigger(
-    remainingTriggers: number,
-    permanentsCount: number,
-    tokenDoublers: number,
-    tokens: TokenType[]
-  ) {
-    const tokensCopy = structuredClone(tokens);
-    let updatedPermanentsCount = permanentsCount;
-    if (remainingTriggers === 0)
-      if (updatedPermanentsCount < 10) {
-        return {
-          tokenResults: [tokensCopy[0]],
-          totalTokens: tokensCopy[0].count,
-        };
-      } else {
-        return {
-          tokenResults: tokensCopy,
-          totalTokens: tokens.reduce((acc, token) => acc + token.count, 0),
-        } as Results;
-      }
-    const catsToCreate = 1 * Math.pow(2, tokenDoublers);
-    if (
-      tokensCopy.length === 0 ||
-      tokensCopy[0].name !== "1/1 white Cat creature"
-    ) {
-      tokensCopy.unshift({
-        id: "1/1 white Cat creature",
-        name: "1/1 white Cat creature",
-        count: catsToCreate,
-      });
-      updatedPermanentsCount += catsToCreate;
-    } else {
-      tokensCopy[0].count += catsToCreate;
-      updatedPermanentsCount += catsToCreate;
-    }
-
-    if (updatedPermanentsCount >= 10) {
-      tokensCopy.forEach((token) => {
-        token.count = token.count + token.count * Math.pow(2, tokenDoublers);
-      });
-    }
-
-    return resolveTrigger(
-      remainingTriggers - 1,
-      updatedPermanentsCount,
-      tokenDoublers,
-      tokensCopy
-    );
-  }
 
   const calculatedTokens = useMemo(() => {
     return resolveTrigger(
