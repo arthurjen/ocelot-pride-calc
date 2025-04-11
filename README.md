@@ -1,8 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ocelot Pride Calculator
+
+A web application for Magic: The Gathering players to calculate token creation with the Ocelot Pride card. This calculator helps players determine the number of tokens created based on various game conditions and modifiers.
+
+[![Live Demo](https://ocelot-pride-calc.vercel.app/)](https://ocelot-pride-calc.vercel.app/)
+
+## Features
+
+- Calculate token creation based on:
+  - Number of Ocelot Prides in play
+  - Total permanents controlled
+  - Trigger doublers
+  - Token doublers
+  - Custom token types
+- Real-time calculation updates
+- Beautiful, responsive UI with animations
+- Support for multiple token types
+- Visual indication of "city's blessing" (10+ permanents)
+
+## Screenshot
+
+![Ocelot Pride Calculator Screenshot](https://ocelot-pride-calc.vercel.app/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/ocelot-pride-calc.git
+cd ocelot-pride-calc
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +55,40 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Enter the number of Ocelot Prides you control
+2. Input your total number of permanents
+3. Add any trigger doublers or token doublers
+4. Add custom token types if needed
+5. View the calculated results in real-time
 
-## Learn More
+## Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+Try out the calculator at [https://ocelot-pride-calc.vercel.app/](https://ocelot-pride-calc.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/) - React framework
+- [React](https://reactjs.org/) - UI library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Framer Motion](https://www.framer.com/motion/) - Animations
+- [Lucide React](https://lucide.dev/) - Icons
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Magic: The Gathering and Ocelot Pride are properties of Wizards of the Coast
+- This is a fan-made tool and is not affiliated with Wizards of the Coast
