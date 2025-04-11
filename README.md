@@ -1,8 +1,8 @@
 # Ocelot Pride Calculator
 
-A web application for Magic: The Gathering players to calculate token creation with the Ocelot Pride card. This calculator helps players determine the number of tokens created based on various game conditions and modifiers.
+Have you ever been in a situation where you need to calculate the number of tokens you will create with Ocelot Pride but it's taking you too long to do the math? Maybe you find yourself in the unfortunate situation of having created multiple token copies of Ocelot Pride. Maybe you're wondering whether to play your Roaming Throne or your Mondrak to generate the most cats to throw at your opponents with Goblin Bombardment. Or maybe you need to know how much life you're about to gain from your Soul Warden. Regardless, this tool is for you.
 
-[![Live Demo](https://ocelot-pride-calc.vercel.app/)](https://ocelot-pride-calc.vercel.app/)
+[Live Demo](https://ocelot-pride-calc.vercel.app/)
 
 ## Features
 
@@ -19,7 +19,7 @@ A web application for Magic: The Gathering players to calculate token creation w
 
 ## Screenshot
 
-![Ocelot Pride Calculator Screenshot](https://ocelot-pride-calc.vercel.app/)
+![Ocelot Pride Calculator Screenshot](./public/screenshot.png)
 
 ## Getting Started
 
