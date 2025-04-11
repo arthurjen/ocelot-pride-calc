@@ -1,8 +1,9 @@
-// src/App.tsx
+"use client";
+
 import React, { useState, useMemo } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCrown, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Crown, Minus } from "lucide-react";
+import Image from "next/image";
 
 interface TokenType {
   id: string;
@@ -72,7 +73,7 @@ const App = () => {
     }
 
     if (updatedPermanentsCount >= 10) {
-      tokensCopy.forEach((token, index) => {
+      tokensCopy.forEach((token) => {
         token.count = token.count + token.count * Math.pow(2, tokenDoublers);
       });
     }
@@ -180,10 +181,12 @@ const App = () => {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Card Image */}
           <div className="flex-1">
-            <img
-              src="https://cards.scryfall.io/large/front/8/9/89cf6f57-230f-497e-a14e-ad1e8737fd42.jpg?1717011506"
+            <Image
+              src="/ocelot-pride.jpg"
               alt="Ocelot Pride"
               className="w-full rounded-lg shadow-md"
+              width={200}
+              height={400}
             />
           </div>
 
@@ -211,11 +214,8 @@ const App = () => {
                     exit={{ opacity: 0, scale: 0.9 }}
                     className="flex items-center gap-2 text-sm text-green-600 mt-1 bg-green-50 p-2 rounded-md"
                   >
-                    <FontAwesomeIcon
-                      icon={faCrown}
-                      className="h-4 w-4 text-yellow-400"
-                    />
-                    <p>You have the city's blessing!</p>
+                    <Crown className="h-4 w-4 text-yellow-400" />
+                    <p>You have the city&apos;s blessing!</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -243,10 +243,7 @@ const App = () => {
                     onClick={addTokenType}
                     className="flex items-center text-xs px-3 py-2 rounded-md border border-amber-300 bg-gradient-to-r from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-200 text-amber-700 font-medium shadow-sm transition-all duration-200 hover:shadow"
                   >
-                    <FontAwesomeIcon
-                      icon={faPlus}
-                      className="text-amber-500 h-4 w-4 mr-2"
-                    />
+                    <Plus className="text-amber-500 h-4 w-4 mr-2" />
                     Add Token
                   </button>
                 </div>
@@ -310,10 +307,7 @@ const App = () => {
                             className="p-2 rounded-full mb-2 text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors duration-200 flex items-center justify-center"
                             aria-label="Remove token"
                           >
-                            <FontAwesomeIcon
-                              icon={faMinus}
-                              className="h-4 w-4"
-                            />
+                            <Minus className="h-4 w-4" />
                           </button>
                         </motion.div>
                       ))}
