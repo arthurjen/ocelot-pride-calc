@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Crown, Minus } from "lucide-react";
 import Image from "next/image";
+import { beleren } from "./fonts";
 
 interface TokenType {
   id: string;
@@ -172,7 +173,7 @@ const App = () => {
         className="max-w-4xl mx-auto"
       >
         <header className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h1 className={`${beleren.className} text-4xl md:text-5xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent`}>
             Ocelot Pride Calculator
           </h1>
         </header>
